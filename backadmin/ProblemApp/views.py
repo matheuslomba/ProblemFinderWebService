@@ -89,7 +89,11 @@ def usuarioApi(request, id=0):
 
     elif request.method == 'POST':
         usuario_data = JSONParser().parse(request)
+        print("----------------usuario_data---------------")
+        print(usuario_data)
         usuarios_serializer = UsuarioSerializer(data = usuario_data)
+        print("----------------usuarios_serializer-----------------")
+        print(usuarios_serializer)
         if usuarios_serializer.is_valid():
             usuarios_serializer.save()
             return JsonResponse("Adicionado com sucesso", safe=False)

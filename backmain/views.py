@@ -2,13 +2,9 @@ from flask import Flask, request, Response
 from flask.json import jsonify
 from bson import json_util
 from main import mongo
-#from main import db
 
 from procuraWeb import mainbusca
-"""import os, sys
-scriptWebPath = os.path.abspath('../ScriptWeb')
-sys.path.insert(0, scriptWebPath)
-from procuraWeb import mainbusca"""
+
 
 def listar_setores_antigo():
     setores_collection = mongo.db.ProblemApp_setor
@@ -45,7 +41,7 @@ def listar_websites():
     website_collection = mongo.db.ProblemApp_website
     websites = website_collection.find()
     lista_websites = list(websites)
-    json_data = json_util.dumps(lista_websites)
+    json_data = json_util.dumps(lista_websites, ensure_ascii=False)
     return json_data
 
 def clicar_websites(request):

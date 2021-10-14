@@ -14,5 +14,5 @@ class WebsiteSerializer(serializers.ModelSerializer):
 class UsuarioSerializer(serializers.ModelSerializer):
     class Meta:
         model = Usuario
-        fields = ('UsuarioId', 'UsuarioNome')
+        fields = ('UsuarioId', 'UsuarioNome', 'UsuarioSobrenome', 'UsuarioEmail', 'UsuarioSenha', 'UsuarioAlertas')
     
